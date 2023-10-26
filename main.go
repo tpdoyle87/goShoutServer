@@ -34,6 +34,7 @@ func main() {
 		}
 
 		message := string(buffer[:n])
+		fmt.Printf("Received message from %s: %s\n", addr, message)
 		// upcase the message and return it from the sending port
 		message = strings.ToUpper(message)
 		_, err = conn.WriteToUDP([]byte(message), addr)
